@@ -14,4 +14,9 @@
 		2.3.6 Track the progress made. 
 
 -------------------------------------------------------------------------------------------------
-- Lo primero es hacer el manejo de los post en el servidor DNS.
+# TO-DO Step by step:
+# 1. Read the file. -R
+# 2. Format. -R
+# 3. Print the statistics. -R
+# 4. Send to endpoint in chunks of 500. -R
+# 5. Use the collector stats to verify the data has been recieved. -R
