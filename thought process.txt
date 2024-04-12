@@ -1,0 +1,17 @@
+1. Read and identify the parameters stablished, objectives, reach and start a planification.
+2. Identify key factors & specific goals. 
+	2.1 Main objective: Build a Python script to parse a BIND server log and send it to Lumu.
+	2.2 Specific objectives: 
+		2.2.1 Recieve a file to be parsed as an argument. 
+		2.2.2 Parse the information and send the data in chunks. 
+		2.2.3 Print a statistic of the parsed data. 
+	2.3 Other requirements:
+		2.3.1 Verify the data is being send correctly to the collector.
+		2.3.2 The stats should be printed in the specified format. (Number of records processed, rank of clients API queries, most queried hosts, total hits & percentages. 
+		2.3.3 Computational complexity of the ranking algorithm.
+		2.3.4 Provide documentation and instructions on the code. 
+		2.3.5 Upload project to GitHub.
+		2.3.6 Track the progress made. 
+
+-------------------------------------------------------------------------------------------------
+- Lo primero es hacer el manejo de los post en el servidor DNS.
