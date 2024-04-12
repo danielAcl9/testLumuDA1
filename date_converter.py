@@ -8,8 +8,3 @@ def convert_to_iso(date_str):
     iso_format = dt.isoformat()
     
     return iso_format
-
-date_str = "7-Jul-2022 16:34:13.003"
-iso_date = convert_to_iso(date_str)
-print("Fecha y hora en formato ISO:", iso_date)
-
