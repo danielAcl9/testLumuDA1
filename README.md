@@ -10,3 +10,8 @@ The Lumu DNS Log Parser is a Python script designed to parse BIND Server logs an
 - Sends parsed DNS information to Lumu using the Collectors API.
 - Data is sent in chunks of up to 500 records to optimize performance.
 - Provides statistics after data transmission.
+
+## Usage
+- Clone the repository to your local machine.
+- Copy `.env.template` to `.env` and fill the required data keys.
+- Run the script main.py.
