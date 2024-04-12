@@ -1,8 +1,9 @@
+import requests
 from date_converter import convert_to_iso
 
 # Step by step:
 # 1. Read the file. -R
-# 2. Format.
+# 2. Format. -R
 # 3. Send to endpoint in chunks of 500.
 # 4. Use the endpoint response to make the statistics.
 # 5. Print the statistics.
@@ -39,21 +40,29 @@ def format_data(data):
         line_list = list(line.split(" ")) 
         line_list = clean_line_list(line_list)
 
-        # -------------------------------------------
         #Crear el diccionario para enviar al endpoint
         my_object = {
              "timestamp": convert_to_iso(line_list[0]), # Pos = 0
              "name": line_list[8], # Pos = 8
              "client_ip": line_list[5], # Pos = 5
-             "client_name": line_list[8], # Pos = 8
-             "type": line_list[10] # Pos = 10
+            #  "client_name": line_list[8], # Pos = 8
+            #  "type": line_list[10] # Pos = 10
         }
         return_arr.append(my_object)
     return return_arr
 
 if __name__ == '__main__':
+
+    # Obtaining the data
     data = read_data()
-    # data = '7-Jul-2022 16:34:13.003 queries: info: client @0x55adcc672cc0 45.231.61.2#80 (pizzaseo.com): query: pizzaseo.com IN ANY +E(0) (172.20.101.44)'
-    # timestamp = convert_to_iso(data[:23])
     formatted_data = format_data(data)
-    print(formatted_data[0])
+
+    # print(formatted_data)
+
+    # Make a POST request to the endpoint
+
+    url = 'https://api.lumu.io/collectors/5ab55d08-ae72-4017-a41c-d9d735360288/dns/queries?key=d39a0f19-7278-4a64-a255-b7646d1ace80'
+
+    x = requests.post(url, json=formatted_data)
+
+    print(x)
